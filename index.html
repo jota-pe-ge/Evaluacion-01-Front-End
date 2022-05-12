@@ -122,7 +122,7 @@
                         </p>
                     </div>
                     <div class="col-md-7 mx-auto my-5">
-                        <img src="img/windowlicker.gif" class="card-img-top" />
+                        <img src="img/windowlicker.gif" class="w-100" />
                     </div>
                     <div class="col-md-6 mx-auto">
                         <p>
@@ -363,8 +363,8 @@
                             experimental, debido a su cantidad de canciones:
                         </p>
                     </div>
-                    <div class="col-md-7 mx-auto my-5">
-                        <canvas id="miGrafico1" width="100" height="100"></canvas>
+                    <div class="col-md-12 mx-auto my-5">
+                        <canvas id="miGrafico1" width="200" height="60"></canvas>
                     </div>
                     <div class="col-md-6 mx-auto">
                         <p>
@@ -387,13 +387,42 @@
                             los más ovacionados dentro de su discografía.
                         </p>
 
+                        <p>
+                            Y ya para finalizar, consideraremos los decibeles y Beats per Minute de cada pista, considerando todo su repertorio de álbumes. En primer lugar, graficaremos los decibeles de sus canciones, teniendo en
+                            consideración que los decibeles son una unidad de medida para expresar la relación entre dos potencias, que se expresa como un volumen en sus canciones. Los dB (decibeles) RMS (raíz cuadrática media) de cada
+                            canción se obtuvo usando <a href="http://sox.sourceforge.net/">SoX</a> (como lo indica <a href="https://ilokhov.github.io/datavis-aphex-twin/">Lokhov</a>). Se realiza una comparación de los decibeles entre un
+                            rango de -15 dB. Si es menor, se consideran tracks más melódicos, mientras que si son mayores, son más ruidosos. Es así como obtenemos el siguiente gráfico:
+                        </p>
+                    </div>
+                    <div class="col-md-7 mx-auto my-5">
+                        <canvas id="miGrafico3" width="100" height="100"></canvas>
+                    </div>
+                    <div class="col-md-6 mx-auto">
+
+                        <p>
+                            Los Beats per Minute de cada canción han sido medidos a con el programa <a href="https://www.beatunes.com/es/">beaTunes 4</a>, sin embargo, Lokhov señala que algunos datos determinados por beaTunes arrojaban el
+                            doble de rapidez o la mitad del valor, por lo que se modificaron a mano. La visualización de estos datos corresponde a una comparación entre pistas que posean un tempo menor a 110 bpm (que se categorizan como
+                            tracks lentos) y los de mayor tempo (tracks rápidos):
+                        </p>
+                    </div>
+                    <div class="col-md-7 mx-auto my-5">
+                        <canvas id="miGrafico4" width="100" height="100"></canvas>
+                    </div>
+                    <div class="col-md-6 mx-auto">
+                        <p>
+                            Si reconocemos a Richard mediante sus entrevistas, como la de <a href="https://www.musicradar.com/news/aphex-twin-interview-selected-ambient-works">Future Music en el '93</a>; o la de
+                            <a href="https://pitchfork.com/features/cover-story/reader/aphex-twin/#cover">Pitchfork en el 2014</a>. Reconocemos a un tipo que no le gusta hablar en público, pero que no tiene miedo de decir lo que piensa y lo
+                            que hace. Esto se ve reflejado en su trabajo musical, que muchas veces sale de lo comercial (o lo mainstream como lo dicen), al experimentar con sonidos que él mismo crea (a través de sus entrevistas, señala que
+                            muchos de sus sonidos los ha compuesto mediante una combinación de teclados que él mismo ha armado).
+                        </p>
                         <p class="small my-5">
-                            Este párrafo más pequeño debería entregar información adicional: Que se trata de un trabajo para el electivo de
-                            <a href="https://github.com/profesorfaco/front-end">Introducción al Desarrollo Front End con HTML, CSS y JavaScript</a>; que el trabajo está "inspirado" en
+                            Este trabajo está relacionado al electivo de
+                            <a href="https://github.com/profesorfaco/front-end">Introducción al Desarrollo Front End con HTML, CSS y JavaScript</a>; "inspirado" en los trabajos
                             <a href="https://graphics.reuters.com/TONGA-VOLCANO/LIGHTNING/zgpomjdbypd/">Analysing the volcanic lightning from the Tonga eruption</a>, que originalmente fue desarrollado para
-                            <a href="https://graphics.reuters.com/">Reuters Graphics</a> por Manas Sharma y Simon Scarr; que el trabajo se resuelve con <a href="https://getbootstrap.com/">Bootstrap</a> y
-                            <a href="https://www.chartjs.org/">Charts.js</a>, además de consultas a un <a href="https://raw.githubusercontent.com/MinCiencia/Datos-COVID19/master/output/producto5/TotalesNacionales.csv">CSV</a> y un
-                            <a href="https://digimon-api.vercel.app/api/digimon">JSON</a>; etc.
+                            <a href="https://graphics.reuters.com/">Reuters Graphics</a> por Manas Sharma y Simon Scarr, y el de <a href="https://ilokhov.github.io/datavis-aphex-twin/">Evolution of the Aphex Twin sound</a>, creado por
+                            <a href="http://ivanlokhov.com/">Ivan Lokhov</a>; el trabajo se resuelve con <a href="https://getbootstrap.com/">Bootstrap</a> y <a href="https://www.chartjs.org/">Charts.js</a>, además de consultas a un
+                            <a href="https://raw.githubusercontent.com/ilokhov/datavis-aphex-twin/master/tracks.csv">CSV</a> y un <a href="https://raw.githubusercontent.com/jota-pe-ge/datos/main/datos.json">JSON</a>; modificado por el
+                            autor.
                         </p>
                     </div>
                 </div>
@@ -446,12 +475,13 @@
 
                 //tracks de cada album
                 new Chart(document.getElementById("miGrafico1").getContext("2d"), {
-                    type: "doughnut",
+                    type: "bar",
                     data: {
                         labels: ["Selected Ambient Works 85-92", "Selected Ambient Works Volume II", "...I Care Because You Do", "Richard D. James Album", "Drukqs", "Syro"],
                         datasets: [{ data: [album1, album2, album3, album4, album5, album6], label: "Albumes", backgroundColor: ["#edf8fb", "#ccece6", "#99d8c9", "#66c2a4", "#2ca25f", "#006d2c"] }],
                     },
                     options: {
+                        indexAxis: "y",
                         animation: false,
                         layout: {
                             padding: 10,
@@ -527,6 +557,75 @@
                 });
             }
             jota_pe_ge().catch((error) => console.error(error));
+        </script>
+
+        <script>
+            async function todo1() {
+                const consulta = await fetch("https://raw.githubusercontent.com/jota-pe-ge/datos/main/datos.json");
+                const data = await consulta.json();
+                console.log(data);
+                var discreto = 0;
+                var ruidoso = 0;
+
+                data.forEach((d) => {
+                    if (d.db < -15) {
+                        discreto = discreto + 1;
+                    } else if (d.db > -15) {
+                        ruidoso = ruidoso + 1;
+                    }
+                });
+                //Comparacion de ruido
+                new Chart(document.getElementById("miGrafico3").getContext("2d"), {
+                    type: "pie",
+                    data: {
+                        labels: ["Tracks melódicos", "Tracks ruidosos"],
+                        datasets: [{ data: [discreto, ruidoso], label: "Tracks", backgroundColor: ["#c994c7", "#dd1c77"] }],
+                    },
+                    options: {
+                        animation: false,
+                        layout: {
+                            padding: 10,
+                        },
+                    },
+                });
+            }
+            todo1().catch((error) => console.error(error));
+        </script>
+
+        <script>
+            async function todo() {
+                const consulta = await fetch("https://raw.githubusercontent.com/jota-pe-ge/datos/main/datos.json");
+                const data = await consulta.json();
+                console.log(data);
+                //variables
+                var lento = 0;
+                var rapido = 0;
+
+                data.forEach((d) => {
+                    if (d.bpm < 110) {
+                        lento = lento + 1;
+                    } else if (d.bpm > 110) {
+                        rapido = rapido + 1;
+                    }
+                });
+
+                //tracks de cada album
+                new Chart(document.getElementById("miGrafico4").getContext("2d"), {
+                    type: "pie",
+                    data: {
+                        labels: ["Tracks lentos", "Tracks rápidos"],
+                        datasets: [{ data: [lento, rapido], label: "Tracks", backgroundColor: ["#bcbddc", "#756bb1"] }],
+                    },
+                    options: {
+                        animation: false,
+                        layout: {
+                            padding: 10,
+                        },
+                    },
+                });
+            }
+
+            todo().catch((error) => console.error(error));
         </script>
     </body>
 </html>
