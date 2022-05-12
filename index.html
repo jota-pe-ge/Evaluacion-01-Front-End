@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,500;1,300&family=Syne+Mono&display=swap" rel="stylesheet" />
+
+        <style>
+            :root {
+                --bs-body-color: #eee;
+                --bs-body-bg: #000;
+            }
+
+            body {
+                font-weight: 300;
+                font-family: "IBM Plex Sans", sans-serif;
+            }
+
+            header h1 {
+                font-family: "Syne Mono", monospace;
+                color: #3db591;
+                font-weight: 400;
+                font-size: 2.5rem;
+            }
+            header h2 {
+                font-weight: 500;
+                color: rgba(255, 255, 255, 0.5);
+            }
+            header h3 {
+                font-weight: 300;
+            }
+            a {
+                color: rgba(255, 255, 255, 0.75);
+            }
+
+            a:hover {
+                color: rgba(255, 255, 255, 1);
+            }
+
+            header p a {
+                font-weight: 700;
+                text-decoration: none;
+            }
+
+            main p a {
+                text-decoration: underline;
+            }
+
+            p.primero::first-letter {
+                font-family: "Syne Mono", monospace;
+                color: #3db591;
+                float: left;
+                font-size: 4rem;
+                line-height: 1;
+                margin: 0;
+                padding: 0 0.75rem 0 0;
+            }
+
+            div.card {
+                background: #3db591;
+            }
+
+            img.card-img-top {
+                filter: grayscale(1) opacity(0.5);
+                transition: ease filter 0.5s;
+            }
+
+            img.card-img-top:hover {
+                filter: grayscale(0) opacity(1);
+                transition: ease filter 0.5s;
+            }
+        </style>
+        <title>Evaluación 01 - Aphex Twin</title>
+    </head>
+    <body>
+        <header class="titular">
+            <div class="container h-100">
+                <div class="row h-100">
+                    <div class="col-md-6 mx-auto text-center align-self-end">
+                        <video playsinline loop autoplay muted class="w-100">
+                            <source src="img/aphex_logo.webm" type="video/webm" />
+                        </video>
+
+                        <h1>APHEX TWIN</h1>
+                        <h3 class="fs-5 mb-5">Datos y gráficos en base a las canciones de Richard D. James.</h3>
+                        <p class="m-0">Por <a href="#">Joaquín Pérez</a></p>
+                        <p class="small">PUBLICADO EL 12 DE MAYO, 2022</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="container py-5">
+                <div class="row">
+                    <div class="col-md-6 mx-auto">
+                        <p class="primero">
+                            Aphex Twin es el nombre artístico (uno de los tantos, pero el más conocido) de Richard D. James, un dj y compositor de música electrónica irlandés nacionalizado británico, conocido por su multitud de géneros y
+                            por haber estado en el foco de la música IDM (intelligent dance music) en los 90s.
+                        </p>
+
+                        <p>
+                            Fue descrito por el periódico The Guardian en 2001 como "la figura más innovadora e influyente de la música electrónica contemporánea". En 2021 la publicación Pitchfork lo incluyó en su lista de los 200 artistas
+                            más influyentes de los últimos 25 años.
+                        </p>
+
+                        <p>
+                            Su trabajo ha contemplado estilos desde el ambient al acid techno, de composiciones minimalistas a trabajos de producción que sobrepasan los 150 beats per minute. Esta diversificación de géneros las suele
+                            combinar en un solo álbum o incluso en una sola pista.
+                        </p>
+
+                        <p>
+                            Ha sido reconocido por ser un personaje bastante curioso, no suele dar muchas entrevistas, su aura es más bien misteriosa y se le ha definido como un prodigio de la música, debido a que comenzó desde los 14 años
+                            a crear canciones.
+                        </p>
+
+                        <p>
+                            Si bien lo más reconocible es su rostro sonriente o distorsionado, que lo ocupa en la mayoría de su arte promocional, canciones y en las portadas de sus álbumes, fue una respuesta a los artistas technos que
+                            ocultaban su identidad.
+                        </p>
+                    </div>
+                    <div class="col-md-7 mx-auto my-5">
+                        <img src="img/windowlicker.gif" class="card-img-top" />
+                    </div>
+                    <div class="col-md-6 mx-auto">
+                        <p>
+                            Considerando su variación en la música que ha producido, sería interesante observar mediante gráficos cómo su sonido ha evolucionado. Dado que James ha producido una larga cantidad de composiciones, en variados
+                            seudónimos (<a href="https://www.discogs.com/artist/45-Aphex-Twin">alrededor de 18 catalogados en Discogs</a>). Decidí seleccionar su material "principal", sus álbumes de estudio lanzados bajo su seudónimo más
+                            conocido: Aphex Twin.
+                        </p>
+
+                        <p>Es así como obtenemos un total de 6 álbumes que reflejan su sonido característico, que se componen desde el año 1992 hasta el 2014:</p>
+
+                        <div class="album py-5">
+                            <div class="container">
+                                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                                    <div class="col">
+                                        <div class="card shadow-sm">
+                                            <img src="img/saw8592.jpg" class="card-img-top" />
+
+                                            <div class="card text-center">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <button type="button" class="btn btn-sm btn-outline-dark mx-auto" data-bs-toggle="modal" data-bs-target="#probandoModal1">
+                                                            Más información
+                                                        </button>
+                                                        <div class="modal fade" id="probandoModal1" tabindex="-1" aria-labelledby="probandoModalLabel1" aria-hidden="true">
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title text-dark" id="probandoModalLabel1">Más información</h5>
+                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                    </div>
+                                                                    <div class="modal-body bg-dark text-white">
+                                                                        <p>
+                                                                            Selected Ambient Works 85–92 (1992) es el álbum debut de Aphex Twin, lanzado el 9 de noviembre de 1992. El álbum consiste de pistas techno ambientales grabadas en
+                                                                            un cassette que datan de 1985, cuando el artista tenía 13 a 14 años de edad, a trabajos que alcanzó a realizar en el año 92.
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="card shadow-sm">
+                                            <img src="img/saw2.jpg" class="card-img-top" />
+
+                                            <div class="card text-center">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <button type="button" class="btn btn-sm btn-outline-dark mx-auto" data-bs-toggle="modal" data-bs-target="#probandoModal2">
+                                                            Más información
+                                                        </button>
+                                                        <div class="modal fade" id="probandoModal2" tabindex="-1" aria-labelledby="probandoModalLabel2" aria-hidden="true">
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title text-dark" id="probandoModalLabel2">Más información</h5>
+                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                    </div>
+                                                                    <div class="modal-body bg-dark text-white">
+                                                                        <p>
+                                                                            Selected Ambient Works Volume II (1994) corresponde a su segundo álbum de estudio, con sonidos mucho más ambientales. James afirmó estar inspirado en los sueños
+                                                                            lúcidos y comparaba la música a "estar de pie en una central eléctrica con ácido". Es un álbum extenso, con una duración de 2 horas y 30 minutos aproximadamente.
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="card shadow-sm">
+                                            <img src="img/icbyd.jpg" class="card-img-top" />
+
+                                            <div class="card text-center">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <button type="button" class="btn btn-sm btn-outline-dark mx-auto" data-bs-toggle="modal" data-bs-target="#probandoModal3">
+                                                            Más información
+                                                        </button>
+                                                        <div class="modal fade" id="probandoModal3" tabindex="-1" aria-labelledby="probandoModalLabel3" aria-hidden="true">
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title text-dark" id="probandoModalLabel3">Más información</h5>
+                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                    </div>
+                                                                    <div class="modal-body bg-dark text-white">
+                                                                        <p>
+                                                                            ...I Care Because You Do (1995) contiene canciones entre 1990 a 1994, es un álbum que marcó el regreso de los sonidos percusivos que habían sido omitidos en el
+                                                                            extenso Selected Ambient Works Volume II. Fue el último álbum el cual el artista grabó principalmente con tecnología analógica antes de pasar a métodos de
+                                                                            producción digitales.
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="card shadow-sm">
+                                            <img src="img/rdj.jpg" class="card-img-top" />
+
+                                            <div class="card text-center">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <button type="button" class="btn btn-sm btn-outline-dark mx-auto" data-bs-toggle="modal" data-bs-target="#probandoModal4">
+                                                            Más información
+                                                        </button>
+                                                        <div class="modal fade" id="probandoModal4" tabindex="-1" aria-labelledby="probandoModalLabel4" aria-hidden="true">
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title text-dark" id="probandoModalLabel4">Más información</h5>
+                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                    </div>
+                                                                    <div class="modal-body bg-dark text-white">
+                                                                        <p>
+                                                                            Richard D. James Album (1996) es reconocido por muchos críticos como su obra más influyente, catalogándolo como el lanzamiento de IDM más conocido de todos los
+                                                                            tiempos. Fue compuesto en su computador Macintosh y posee influencias a los géneros jungle y drum and bass, combinado también con melodías ambient y la voz modulada
+                                                                            de James.
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="card shadow-sm">
+                                            <img src="img/drukqs.jpg" class="card-img-top" />
+
+                                            <div class="card text-center">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <button type="button" class="btn btn-sm btn-outline-dark mx-auto" data-bs-toggle="modal" data-bs-target="#probandoModal5">
+                                                            Más información
+                                                        </button>
+                                                        <div class="modal fade" id="probandoModal5" tabindex="-1" aria-labelledby="probandoModalLabel5" aria-hidden="true">
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title text-dark" id="probandoModalLabel5">Más información</h5>
+                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                    </div>
+                                                                    <div class="modal-body bg-dark text-white">
+                                                                        <p>
+                                                                            Drukqs (2001) es un álbum doble que alterna entre composiciones programadas con beats inspirados en el drum and bass y piezas clásicas de piano controladas por
+                                                                            computadora. Cuenta con la canción de piano Avril 14th, una de las grabaciones más conocidas de James. Como dato curioso, los fanáticos celebran el 14 de abril
+                                                                            debido a esta composición, conmemorando su música y legado.
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="card shadow-sm">
+                                            <img src="img/syro.jpg" class="card-img-top" />
+
+                                            <div class="card text-center">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <button type="button" class="btn btn-sm btn-outline-dark mx-auto" data-bs-toggle="modal" data-bs-target="#probandoModal6">
+                                                            Más información
+                                                        </button>
+                                                        <div class="modal fade" id="probandoModal6" tabindex="-1" aria-labelledby="probandoModalLabel6" aria-hidden="true">
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title text-dark" id="probandoModalLabel6">Más información</h5>
+                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                    </div>
+                                                                    <div class="modal-body bg-dark text-white">
+                                                                        <p>
+                                                                            Syro (2014) viene siendo el último álbum que ha sacado hasta la fecha. Descrito por el propio artista como su álbum más pop, incorpora estilos como techno,
+                                                                            synth-funk, breakbeat, acid house y jungle. El álbum fue viralizado mediante una críptica campaña de marketing, incluyendo un anuncio en la dark web y eventos en
+                                                                            ciudades de todo el mundo. El 2015 ganó el Grammy a mejor álbum Dance/Electronic.
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p>
+                            Mediante datos obtenidos de un JSON creado por un <a href="https://github.com/ilokhov">desarrollador web alemán, Ivan Lokhov,</a> se pudo obtener la duración de cada canción, el álbum al que corresponde, sus
+                            decibeles (dB) y los Beats per Minute (bpm).
+                        </p>
+
+                        <p>
+                            Como una primera aproximación, se graficaron los álbumes con el total de canciones de cada uno de ellos, para así reconocer cuáles álbumes poseen un caracter más comercial, mientras que otros tienen un afán más
+                            experimental, debido a su cantidad de canciones:
+                        </p>
+                    </div>
+                    <div class="col-md-7 mx-auto my-5">
+                        <canvas id="miGrafico1" width="100" height="100"></canvas>
+                    </div>
+                    <div class="col-md-6 mx-auto">
+                        <p>
+                            Como se distingue, aquellos álbumes que poseen más canciones son Drukqs y Selected Ambient Works Volume II, dos de sus álbumes más experimentales, uno siendo cosniderado como una mezcla alternada de composiciones
+                            de géneros variados, y el otro respectivamente, un álbum ambiental creado específicamente para los espacios de descanso en las fiestas.
+                        </p>
+
+                        <p>
+                            Se realizó un segundo gráfico, gracias al <a href="https://github.com/profesorfaco">profesor Felipe Cortez</a>, el cual permite observar la duración de cada pista y hacer una comparación entre sus otras
+                            composiciones:
+                        </p>
+                    </div>
+                    <div class="col-md-7 mx-auto my-5">
+                        <canvas id="miGrafico2" width="100" height="100"></canvas>
+                    </div>
+                    <div class="col-md-6 mx-auto">
+                        <p>
+                            Con este gráfico de dispersión, se reconocen que las canciones más extensas pertenecen a los álbumes Selected Ambient Works Volume II y Syro, mientras que el álbum con canciones más cortas es Richard D. James
+                            Album, esto puede ser debido a que apuntaba a un fin mucho más comercial (canciones de aproximadamente 3 minutos, como lo acepta la radio). Esto no sería de extrañar, ya que ésta álbum es considerado como uno de
+                            los más ovacionados dentro de su discografía.
+                        </p>
+
+                        <p class="small my-5">
+                            Este párrafo más pequeño debería entregar información adicional: Que se trata de un trabajo para el electivo de
+                            <a href="https://github.com/profesorfaco/front-end">Introducción al Desarrollo Front End con HTML, CSS y JavaScript</a>; que el trabajo está "inspirado" en
+                            <a href="https://graphics.reuters.com/TONGA-VOLCANO/LIGHTNING/zgpomjdbypd/">Analysing the volcanic lightning from the Tonga eruption</a>, que originalmente fue desarrollado para
+                            <a href="https://graphics.reuters.com/">Reuters Graphics</a> por Manas Sharma y Simon Scarr; que el trabajo se resuelve con <a href="https://getbootstrap.com/">Bootstrap</a> y
+                            <a href="https://www.chartjs.org/">Charts.js</a>, además de consultas a un <a href="https://raw.githubusercontent.com/MinCiencia/Datos-COVID19/master/output/producto5/TotalesNacionales.csv">CSV</a> y un
+                            <a href="https://digimon-api.vercel.app/api/digimon">JSON</a>; etc.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="bg-black">
+            <div class="container">
+                <div class="row py-3">
+                    <div class="col text-center"><small>Joaquín Pérez | 12 de mayo, 2022</small></div>
+                </div>
+            </div>
+        </footer>
+        <!-- Biblioteca de Bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <!-- Biblioteca Chart.js -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"
+            integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <script>
+            async function todo() {
+                const consulta = await fetch("https://raw.githubusercontent.com/jota-pe-ge/datos/main/datos.json");
+                const data = await consulta.json();
+                console.log(data);
+                //variables
+                var album1 = 0;
+                var album2 = 0;
+                var album3 = 0;
+                var album4 = 0;
+                var album5 = 0;
+                var album6 = 0;
+
+                data.forEach((d) => {
+                    if (d.album == "saw85") {
+                        album1 = album1 + 1;
+                    } else if (d.album == "saw2") {
+                        album2 = album2 + 1;
+                    } else if (d.album == "icbyd") {
+                        album3 = album3 + 1;
+                    } else if (d.album == "rdj") {
+                        album4 = album4 + 1;
+                    } else if (d.album == "drukqs") {
+                        album5 = album5 + 1;
+                    } else if (d.album == "syro") {
+                        album6 = album6 + 1;
+                    }
+                });
+
+                //tracks de cada album
+                new Chart(document.getElementById("miGrafico1").getContext("2d"), {
+                    type: "doughnut",
+                    data: {
+                        labels: ["Selected Ambient Works 85-92", "Selected Ambient Works Volume II", "...I Care Because You Do", "Richard D. James Album", "Drukqs", "Syro"],
+                        datasets: [{ data: [album1, album2, album3, album4, album5, album6], label: "Albumes", backgroundColor: ["#edf8fb", "#ccece6", "#99d8c9", "#66c2a4", "#2ca25f", "#006d2c"] }],
+                    },
+                    options: {
+                        animation: false,
+                        layout: {
+                            padding: 10,
+                        },
+                    },
+                });
+            }
+
+            todo().catch((error) => console.error(error));
+        </script>
+
+        <script>
+            async function jota_pe_ge() {
+                //el fetch
+                const consulta = await fetch("https://raw.githubusercontent.com/jota-pe-ge/datos/main/datos.json");
+                const data = await consulta.json();
+                //algunas variables para calcular
+
+                var puntos = [];
+
+                data.forEach((b) => {
+                    let info = { x: b.year, y: b.length / 60, tema: b.title, disco: b.album };
+                    puntos.push(info);
+                });
+
+                console.log(puntos);
+                //Gráfico de dispersión
+                //Para evidenciar si existe una relación o correlación entre las dos variables
+                new Chart(document.getElementById("miGrafico2").getContext("2d"), {
+                    type: "scatter",
+                    data: {
+                        datasets: [
+                            {
+                                label: "Extensión y experiencia",
+                                data: puntos,
+                                backgroundColor: "rgba(61, 181, 145,.7)",
+                                pointRadius: 10,
+                                pointHoverRadius: 12,
+                            },
+                        ],
+                    },
+                    options: {
+                        animation: false,
+                        scales: {
+                            x: {
+                                min: 1990,
+                                max: 2016,
+                                ticks: {
+                                    callback: function (numero) {
+                                        return numero.toLocaleString("es-CL");
+                                    },
+                                },
+                            },
+                            y: {
+                                min: 0,
+                                ticks: {
+                                    callback: function (numero) {
+                                        return numero.toLocaleString("es-CL") + " min.";
+                                    },
+                                },
+                            },
+                        },
+                        plugins: {
+                            tooltip: {
+                                callbacks: {
+                                    label: (context) => {
+                                        return context.raw.tema + " de " + context.raw.disco;
+                                    },
+                                },
+                            },
+                        },
+                    },
+                });
+            }
+            jota_pe_ge().catch((error) => console.error(error));
+        </script>
+    </body>
+</html>
